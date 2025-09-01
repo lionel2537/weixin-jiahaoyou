@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>添加微信好友</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin: 20px;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #07C160 0%, #05a855 100%);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .qr-container {
+            margin: 20px 0;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            width: 100%;
+            max-width: 300px;
+        }
+        
+        .qr-code {
+            width: 100%;
+            border-radius: 8px;
+            border: 1px solid #eee;
+        }
+        
+        .instructions {
+            margin: 25px 0;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .instructions h3 {
+            color: #07C160;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        .steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .step {
+            flex: 1;
+            min-width: 200px;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .step i {
+            font-size: 24px;
+            color: #07C160;
+            margin-bottom: 10px;
+        }
+        
+        .btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 16px 40px;
+            background-color: #07C160;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(7, 193, 96, 0.3);
+        }
+        
+        .btn:hover {
+            background-color: #05964d;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(7, 193, 96, 0.4);
+        }
+        
+        .btn:active {
+            transform: translateY(0);
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 14px;
+            border-top: 1px solid #eee;
+            background: #f9f9f9;
+        }
+        
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 24px;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .btn {
+                padding: 14px 30px;
+                font-size: 16px;
+            }
+            
+            .steps {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>添加微信好友</h1>
+            <p>扫码或点击下方按钮快速添加微信</p>
+        </div>
+        
+        <div class="content">
+            <div class="qr-container">
+                <img src="weixin.jpg" alt="微信二维码" class="qr-code">
+                <p style="margin-top: 15px; color: #666;">微信扫一扫添加好友</p>
+            </div>
+            
+            <div class="instructions">
+                <h3>添加步骤</h3>
+                <div class="steps">
+                    <div class="step">
+                        <i class="fas fa-qrcode"></i>
+                        <h4>保存二维码</h4>
+                        <p>长按二维码保存到手机相册</p>
+                    </div>
+                    <div class="step">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h4>打开微信</h4>
+                        <p>启动微信应用并进入扫一扫</p>
+                    </div>
+                    <div class="step">
+                        <i class="fas fa-user-plus"></i>
+                        <h4>添加好友</h4>
+                        <p>从相册选择二维码并添加好友</p>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+        
+        <div class="footer">
+            <p>© 2023 微信好友添加页面 | 如果遇到问题，请尝试刷新页面或直接扫描二维码</p>
+        </div>
+    </div>
+
+    <script>
+        // 添加简单的交互效果
+        document.addEventListener('DOMContentLoaded', function() {
+            const btn = document.querySelector('.btn');
+            
+            btn.addEventListener('mouseenter', function() {
+                this.innerHTML = '<i class="fab fa-weixin"></i> 点击添加好友';
+            });
+            
+            btn.addEventListener('mouseleave', function() {
+                this.innerHTML = '<i class="fab fa-weixin"></i> 立即跳转微信';
+            });
+        });
+    </script>
+</body>
+</html>
